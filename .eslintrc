@@ -11,7 +11,8 @@
     "globals": {
     "$": true,
     "require": true
-    }
+    },
+
     "rules": {
       "no-console": "off",
         "quotes": ["error", "single"]
