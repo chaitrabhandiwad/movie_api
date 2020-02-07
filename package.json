@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
