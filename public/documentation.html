@@ -24,110 +24,105 @@
         </p>
 
         <table>
-          <thead>
-            <tr>
-              <th>Description</th>
-              <th>URL</th>
-              <th>HTTP method</th>
-              <th>Request body data format</th>
-              <th>Response body data format</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Get a list of all movies</td>
-              <td>/movies</td>
-              <td>GET</td>
-              <td>None</td>
-              <td>JSON object holding data about all movies</td>
-            </tr>
-            <tr>
-              <td>Get data about a single movie by title</td>
-              <td>/movies/[title]</td>
-              <td>GET</td>
-              <td>None</td>
-              <td>
-                JSON object holding data about a single movie, containing title,
-                description, genre, director,image URL
-              </td>
-            </tr>
-            <tr>
-              <td>Get data about a movie genre</td>
-              <td>/genre/[name]</td>
-              <td>GET</td>
-              <td>None</td>
-              <td>
-                JSON object holding data about a movie genre, containing name and
-                description.
-              </td>
-            </tr>
-            <tr>
-              <td>Get data about a director</td>
-              <td>/director/[name]</td>
-              <td>GET</td>
-              <td>None</td>
-              <td>
-                JSON object holding data about a director, containing name, bio,
-                birth year, death year.
-              </td>
-            </tr>
-            <tr>
-              <td>Add a new user to the registry.</td>
-              <td>/users</td>
-              <td>POST</td>
-              <td>
-                JSON object holding data about the user to add, structured like:
-                <p>
-                  { username: "Johnny", password: "pw123", email:
-                  "johnny@gmail.com", dateofbirth: "20/12/92"
-                </p>
-              </td>
-              <td>
-                JSON object holding data about the user that was add, structured
-                like:
-                <p>
-                  { id: 7, username: "Johnny", password: "pw123", email:
-                  "johnny@gmail.com", dateofbirth: "20/12/92"
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>Update a user's information</td>
-              <td>/users/[username]/[password]/[email]/[date of birth]</td>
-              <td>PUT</td>
-              <td>None</td>
-              <td>A text message indicating the user's information was updated.</td>
-            </tr>
-            <tr>
-              <td>Add a movie to the user's favorites list</td>
-              <td>/favorites/[username]/[title]</td>
-              <td>POST</td>
-              <td>None</td>
-              <td>
-                A text message indicating the movie title was added to the user's
-                favorites list.
-              </td>
-            </tr>
-            <tr>
-              <td>Delete a movie from the user's favorites list</td>
-              <td>/favorites/[username]/[title]</td>
-              <td>DELETE</td>
-              <td>None</td>
-              <td>
-                A text message indicating the movie title was deleted from the
-                user's favorites list.
-              </td>
-            </tr>
-            <tr>
-              <td>Remov a user from the registry.</td>
-              <td>/users/[username]/[title]</td>
-              <td>DELETE</td>
-              <td>None</td>
-              <td>
-                A text message indicating the user was removed from the registry.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </body>
-    </html>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Endpoint URL</th>
+          <th>Type</th>
+          <th>Request body</th>
+          <th>Response body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Get a list of all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>
+            JSON object holding data about all the movies, containing the title, genre and director's name property. Example:<br>
+            {<br>"Title": "The Greatest Showman",<br> "Description"....": <br> "Genre": "Musical",<br> Name :"Michael Gracey"<br>},
+          </td>
+        </tr>
+        <tr>
+          <td>Get data about a single movie by title</td>
+          <td>/movies/[Title]</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>
+            JSON object holding data about a single movie.
+          </td>
+        </tr>
+        <tr>
+          <td>Get data about a movie genre by movie title</td>
+          <td>/movies/genres/[Title]</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>
+            JSON object holding data about a movie genre.
+          </td>
+        </tr>
+        <tr>
+          <td>Get data about a director by name</td>
+          <td>/movies/directors/[Name]</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>
+            JSON object holding data about a director.
+          </td>
+        </tr>
+        <tr>
+          <td>Add a new user</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>
+            JSON object holding data about the user to add. Example:<br>
+              { <br>"Username": "Paulina Gomez",<br>"Password": "12345",<br> "Email":
+              "paulina@gmail.com", <br>"Birthday": "2000-01-01" <br>}
+          </td>
+          <td>
+            JSON object holding data about the user that was add, including an ID. Example:<br>
+              {<br> "Favorites": [],<br> "_id": "5d7cc5e9a3d1dc4290f30036",<br> "Username": "Paulina Gomez",<br> "Password": "12345",<br> "Email": "pauilna@gmail.com",<br> "Birthday": "2000-01-01T00:00:00.000Z",<br>}
+          </td>
+        </tr>
+        <tr>
+          <td>Update a user information</td>
+          <td>/users/[Username]</td>
+          <td>PUT</td>
+          <td>
+            JSON object holding data about the user to add. Example:<br>
+            {<br> "Username": "Paulina Gomez"(required),<br> "Password": "123456789"(required),<br> "Email": "paulinagomez.gmail.com"(required),<br> "Birthday": "2000-01-01"<br>}
+          </td>
+          <td>JSON object holding data that was newly updated.</td>
+        </tr>
+        <tr>
+          <td>Add a movie to the list of favorites</td>
+          <td>/users/[Username]/Movies/[MovieID]</td>
+          <td>POST</td>
+          <td>
+            JSON object holding data about a movie which users like to add to their list of favorites.
+          </td>
+          <td>
+            JSON object holding data about the movie that was added to the list of favorite.
+          </td>
+        </tr>
+        <tr>
+          <td>Delete a movie from the list of favorites</td>
+          <td>/users/[Username]/Movies/[MovieID]</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>
+            A text message indicating the movie that was removed from the list of favorites.
+          </td>
+        </tr>
+        <tr>
+          <td>Remove a user</td>
+          <td>/users/[Username]</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>A text message indicating the user who was removed</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

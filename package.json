@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "lodash": "^4.17.15",
+    "mongoose": "^5.9.1",
     "morgan": "^1.9.1",
     "uuid": "^3.4.0"
   },
