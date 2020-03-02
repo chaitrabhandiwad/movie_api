@@ -8,7 +8,7 @@ Models = require('./model.js'),
  morgan = require('morgan'),
  app = express();
 
-var auth = require('./auth')(app);
+
 
  const passport = require('passport');
  require('./passport');
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-
+var auth = require('./auth')(app);
 // GET requests
 app.get('/', function(req, res){
   res.send('Welcome to myFlix!')
@@ -84,6 +84,17 @@ app.get('/movies/directors/:Name', passport.authenticate('jwt', { session: false
   })
 });
 
+app.get('/users',function(req, res) {
+  User.find()
+  .then(function(user){
+    res.status(201).json(user);
+  })
+  .catch(function(err){
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  });
+});
+
 // Add new users
 /* We will expectJSON in this format
 {
@@ -93,7 +104,7 @@ Password: String,
 Email: String,
 Birthday: Date
 } */
-app.post('/users',function(req, res) {
+app.post('/users',passport.authenticate('jwt', {session: false}), (req, res) => {
     User.findOne({ Username : req.body.Username })
     .then(function(user) {
         if (user) {
