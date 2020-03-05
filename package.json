@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1"
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express-validator": "^6.4.0",
@@ -17,11 +18,11 @@
     "uuid": "^3.4.0"
   },
   "devDependencies": {
-    "express": "^4.17.1"
+
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
