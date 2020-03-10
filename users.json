@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e45e034caf7a8abb01cc794"},"Username":null,"Password":null,"Email":null,"Birthday":null,"Favourite":{"_id":{"$oid":"5e45be776ecb3c7fae93d4e9"}}}
+{"_id":{"$oid":"5e45e0d9caf7a8abb01cc795"},"Username":"Janedoe24534","Password":"Janedoe@1234","Email":"Jane@ymail.com","Birthday":{"$date":"1992-08-08T00:00:00.000Z"},"Favourite":{"_id":{"$oid":"5e45732935b2433873658116"}}}
+{"_id":{"$oid":"5e4ed2585062bd00ffb97864"},"FavoriteMovies":[],"Username":"Janedoe234","Password":"Janedoe@234","Email":"Jane@gmail.com","Birthday":{"$date":"1992-05-08T00:00:00.000Z"},"__v":0}
+{"_id":{"$oid":"5e563d9f471b220185fa636c"},"FavoriteMovies":[],"Username":"Sakheen","Password":"Sakheen@2429","Email":"sak@gmail.com","Birthday":{"$date":"1989-02-08T00:00:00.000Z"},"__v":0}
