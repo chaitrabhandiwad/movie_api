@@ -21,7 +21,7 @@ const Movies = Models.Movies;
 const User = Models.User;
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {useNewUrlParser: true});
+mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true});
 
 // app.use initializations
 app.use(cors());
