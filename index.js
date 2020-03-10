@@ -24,12 +24,14 @@ const User = Models.User;
 mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true});
 
 // app.use initializations
-app.use(cors());
+
 app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(express.static('public'));
+app.use(cors());
 
 var auth = require('./auth')(app);
+
 // GET requests
 app.get('/', function(req, res){
   res.send('Welcome to myFlix!')
