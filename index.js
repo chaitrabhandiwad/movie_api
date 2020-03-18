@@ -21,7 +21,7 @@ const Movies = Models.Movies;
 const User = Models.User;
 
 //connect to database
-mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true});
+mongoose.connect('process.env.CONNECTION_URI', {useNewUrlParser: true});
 
 // app.use initializations
 
@@ -38,7 +38,7 @@ app.get('/', function(req, res){
 });
 
 // Get a list of ALL movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), function(req, res) {
+app.get('/movies',function(req, res) {
   Movies.find()
   .then(function(movie){
     res.status(201).json(movie);
