@@ -21,7 +21,7 @@ const Movies = Models.Movies;
 const User = Models.User;
 
 //connect to database
-mongoose.connect('process.env.CONNECTION_URI', {useNewUrlParser: true});
+mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true});
 
 // app.use initializations
 
