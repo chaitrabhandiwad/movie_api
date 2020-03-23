@@ -1,0 +1,1 @@
+mongoimport --host myFlixDB-shard-0/myflixdb-shard-00-00-xwyjr.mongodb.net:27017,myflixdb-shard-00-01-xwyjr.mongodb.net:27017,myflixdb-shard-00-02-xwyjr.mongodb.net:27017 --ssl --username myFlixAdmin --password Career@1234 --authenticationDatabase admin -db myFlixDB --collection movies --type json --file /mnt/c/users/sakhe/desktop/movie_api/movies.json
