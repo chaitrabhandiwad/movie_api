@@ -52,3 +52,10 @@ export function LoginView(props) {
         </Form.Group>
     );
 }
+
+LoginView.propTypes = {
+
+    onLoggedIn: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
+
+};
