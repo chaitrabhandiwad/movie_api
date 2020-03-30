@@ -38,7 +38,7 @@ app.get('/', function(req, res){
 });
 
 // Get a list of ALL movies
-app.get('/movies',function(req, res) {
+app.get('/movies',passport.authenticate('jwt', { session: false }),function(req, res) {
   Movies.find()
   .then(function(movie){
     res.status(201).json(movie);
