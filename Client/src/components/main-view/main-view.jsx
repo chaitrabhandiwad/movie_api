@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 import { RouterLink } from 'react-router-dom';
 import { LoginView } from '../Login-view/Login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { UpdateView } from '../profile-view/update-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
@@ -176,6 +180,7 @@ export class MainView extends React.Component {
                             }
                             } />
                             <Route exact path="/users/:Username" render={() => <ProfileView />} />
+                            <Route exact path="/update/:Username" render={() => <UpdateView user={users.find(user => user.Username === match.params.Username)} />} />
                         </Row>
                     </Container>
                 </div>

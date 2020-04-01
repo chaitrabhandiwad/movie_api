@@ -27,6 +27,67 @@ span:hover {
 .form-group {
   margin-top: 33px;
 }
+.update-button {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #522266;
+  border-radius: 24px;
+}
+
+.update-button:hover {
+  background-color: #b9b9b9;
+  border-color: #b9b9b9;
+}
+
+.update-button:focus,
+.update-button:active {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #b9b9b9 !important;
+}
+
+.delete-button {
+  background-color: #522266;
+  border-color: #522266;
+  border-radius: 24px;
+}
+
+.delete-button:hover {
+  background-color: #903cb3;
+  border-color: #903cb3;
+}
+
+.delete-button:focus,
+.delete-button:active {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #903cb3 !important;
+}
+.update-btn {
+  background-color: #522266;
+  border-color: #522266;
+  border-radius: 24px;
+}
+
+.update-btn:hover {
+  background-color: #903cb3;
+  border-color: #903cb3;
+}
+
+.update-btn:focus,
+.update-btn:active {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #903cb3 !important;
+}
+
+.unregister-btn {
+  color: #522266;
+}
+
+.unregister-btn:hover {
+  color: #903cb3;
+}
 .card-header {
   font-family: "Merriweather", serif;
   font-size: 16px;
@@ -58,14 +119,18 @@ p {
   box-shadow: none;
 }
 
-.mainV {
-  background-color: #739ab6;
-}
-
 .navbar {
   font-family: "Merriweather", serif;
   font-size: 20px;
   background-color: #cdf3fa;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.profile-button, .logout-button {
+  border-radius: 24px;
 }
 
 .borderBottom {
