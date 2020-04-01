@@ -1,7 +1,12 @@
 import React from 'react';
+import { MainView } from '../main-view/main-view';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import './movie-view.scss';
+
+import { Link } from 'react-router-dom';
+
+import Axios from 'axios';
 
 export class MovieView extends React.Component {
 

@@ -19,15 +19,19 @@
     box-shadow: none;
 }
 
-.mainV {
-    background-color: rgba(115, 154, 182, 1);
-}
-
 .navbar {
     font-family: 'Merriweather', serif;
     font-size: 20px;
     background-color: rgba(205, 243, 250, 1);
 }
+
+.navbar-brand {
+    font-size: 30px;
+  }
+
+  .profile-button, .logout-button {
+    border-radius: 24px; 
+  }
 
 .borderBottom {
     background-color: rgba(184, 195, 204, 1);

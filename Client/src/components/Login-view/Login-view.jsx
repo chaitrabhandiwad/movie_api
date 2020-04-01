@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './login-view.scss';
@@ -10,10 +11,18 @@ export function LoginView(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(username, password);
-        /* Send a request to the server for authentication */
-        /* then call props.onLoggedIn(username) */
-        props.onLoggedIn(username);
+        axios.post('https://ancient-mullhouse.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        })
+            .then(response => {
+                const authData = response.data;
+                props.onLoggedIn(authData);
+            })
+            .catch(e => {
+                console.log('no such user')
+                return alert('Invalid username or password. Please try again');
+            });
     };
     // https://react-bootstrap.github.io/components/forms/
     // React-bootstrap components form
