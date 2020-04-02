@@ -16,8 +16,8 @@ export function LoginView(props) {
             Password: password
         })
             .then(response => {
-                const authData = response.data;
-                props.onLoggedIn(authData);
+                const data = response.data;
+                props.onLoggedIn(data);
             })
             .catch(e => {
                 console.log('no such user')
