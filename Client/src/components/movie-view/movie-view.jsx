@@ -1,56 +1,60 @@
 import React from 'react';
 import { MainView } from '../main-view/main-view';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+import Media from 'react-bootstrap/Media';
+
+//import Button from 'react-bootstrap/Button';
 import './movie-view.scss';
 
-import { Link } from 'react-router-dom';
+export const MovieView = (props) => {
 
-import Axios from 'axios';
+    const { movie } = props;
+    if (!movie) return null;
+    return (
+        <div className="movie-view" >
+            <h1>{movie.Title}</h1>
+            <Media className="d-flex flex-column flex-md-row align-items-center">
+                <Media.Body>
 
-export class MovieView extends React.Component {
+                    <h5>Genre:&nbsp;
+            <Link to={'http://localhost:3000/movies/Genre/:Name'} > {movie.Genre.Name}</Link>
+                    </h5>
+                    <h5>Director:&nbsp;
+            <Link to={'http://localhost:3000/movies/directors/:Name'}>{movie.Director.Name}</Link>
+                    </h5>
 
-    constructor() {
-        super();
-        this.state = {};
-    }
 
-    render() {
-        const { movie, onClick } = this.props;
 
-        if (!movie) return null;
 
-        return (
-            <div className='movie-view'>
-                <div className='movie-title'>
-                    <h4 className='label'>Title</h4>
-                    <p className='value'>{movie.Title}</p>
-                </div>
-
-                <div className='movie-description'>
-                    <h4 className='label'>Description</h4>
-                    <p className='value'>{movie.Description}</p>
-                </div>
-
-                <img className='movie-poster' src={movie.ImagePath} />
-
-                <div className='movie-genre'>
-                    <h4 className='label'>Genre</h4>
-                    <p className='value'>{movie.Genre.Name}</p>
-                </div>
-                <div className='movie-director'>
-                    <h4 className='label'>Director</h4>
-                    <p className='value'>{movie.Director.Name}</p>
-                </div>
-                <button onClick={() => onClick()}>Back</button>
-            </div>
-        );
-    }
+                    <br />
+                    <h5>Description</h5>
+                    <p>{movie.Description}</p>
+                </Media.Body>
+                <img
+                    width={220}
+                    height={326}
+                    className="ml-3"
+                    src={movie.ImagePath}
+                    alt="Generic placeholder"
+                />
+            </Media>
+        </div>
+    );
 }
 
 MovieView.propTypes = {
     movie: PropTypes.shape({
-        Title: PropTypes.string
-    }).isRequired,
-    onClick: PropTypes.func.isRequired
+        Title: PropTypes.string,
+        ImageUrl: PropTypes.string,
+        Description: PropTypes.string,
+        Genre: PropTypes.exact({
+            _id: PropTypes.string,
+            Name: PropTypes.string,
+            Description: PropTypes.string
+        }),
+        Director: PropTypes.shape({
+            Name: PropTypes.string
+        })
+    }).isRequired
 };

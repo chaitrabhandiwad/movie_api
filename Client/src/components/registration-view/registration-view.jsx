@@ -2,9 +2,16 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import './registration-view.scss';
+
+const URL = 'http://localhost:3000';
 
 export function RegistrationView(props) {
 
@@ -13,17 +20,18 @@ export function RegistrationView(props) {
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = e => {
 
         e.preventDefault();
-
-        axios.post('https://ancient-mullhouse.herokuapp.com/users', {
+        const data = {
 
             Username: username,
             Password: password,
             Email: email,
             Birthday: birthday
-        })
+        }
+
+        axios.post(`${URL}/users`, data)
 
             .then(response => {
                 const data = response.data;
@@ -104,6 +112,4 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
 
-    onLoggedIn: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired
 };

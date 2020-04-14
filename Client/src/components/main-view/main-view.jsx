@@ -20,8 +20,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 import './main-view.scss';
-
 
 
 export class MainView extends React.Component {
@@ -42,7 +42,7 @@ export class MainView extends React.Component {
     }
 
     getMovies(token) {
-        axios.get('https://ancient-mullhouse.herokuapp.com/movies', {
+        axios.get('http://localhost:3000/movies', {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
@@ -58,7 +58,7 @@ export class MainView extends React.Component {
 
     getAllUsers(token) {
 
-        axios.get('https://ancient-mullhouse.herokuapp.com/users', {
+        axios.get('http://localhost:3000/users', {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
@@ -141,7 +141,7 @@ export class MainView extends React.Component {
         // Before the movies have been loaded //change the class to avoid confusion
         // if (!movies) return <div className='main-view' />;
 
-        if (!movies) return <body className='main-view' />;
+        if (!movies) return <div className='main-view' />;
 
         return (
 
