@@ -21,7 +21,7 @@ export function UpdateView(props) {
     const handleUpdate = (e) => {
 
         e.preventDefault();
-        axios.put(`http://localhost:3000/users/${user}`, {
+        axios.put(`https://ancient-mullhouse.herokuapp.com/users/${user}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
 
         }, {

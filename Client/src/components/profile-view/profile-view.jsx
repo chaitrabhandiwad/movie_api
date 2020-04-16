@@ -15,7 +15,7 @@ export class ProfileView extends React.Component {
     }
 
     deleteFavorite(movieId) {
-        axios.delete(`http://localhost:3000/users/${localStorage.getItem('user')}/Movies/${movieId}`, {
+        axios.delete(`https://ancient-mullhouse.herokuapp.com/users/${localStorage.getItem('user')}/Movies/${movieId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => {
@@ -31,7 +31,7 @@ export class ProfileView extends React.Component {
     }
 
     deleteProfile() {
-        axios.delete(`http://localhost:3000/users/${localStorage.getItem('user')}`,
+        axios.delete(`https://ancient-mullhouse.herokuapp.com/users/${localStorage.getItem('user')}`,
             {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             })

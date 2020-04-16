@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './login-view.scss';
 
-const URL = 'http://localhost:3000';
+const URL = 'https://ancient-mullhouse.herokuapp.com';
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
