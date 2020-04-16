@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { StarButton } from '../star-button/star-button';
+import './movie-card.scss';
+
 import { Link } from "react-router-dom";
 
 const MAX_CHARS_IN_A_DESCRIPTION = 100;

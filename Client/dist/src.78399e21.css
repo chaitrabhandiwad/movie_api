@@ -27,6 +27,18 @@ span:hover {
 .form-group {
   margin-top: 33px;
 }
+.card-header {
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+}
+
+.button {
+  max-width: 20%;
+}
+p {
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+}
 .update-button {
   background-color: #ececec;
   border-color: #ececec;
@@ -87,18 +99,6 @@ span:hover {
 
 .unregister-btn:hover {
   color: #903cb3;
-}
-.card-header {
-  font-family: "Merriweather", serif;
-  font-size: 16px;
-}
-
-.button {
-  max-width: 20%;
-}
-p {
-  font-family: "Merriweather", serif;
-  font-size: 14px;
 }
 .main-view {
   margin-left: auto;

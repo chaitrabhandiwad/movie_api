@@ -35,42 +35,35 @@ export function LoginView(props) {
     return (
         <div className="login-view">
             <Row className="justify-content-center">
-                <Col xs={11} sm={8} md={6} className="form-container">
-                    <Form.Group>
-                        <Form.Group controlId='formBasicEmail'>
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control
-                                type='username'
-                                onChange={e => setUsername(e.target.value)}
-                                placeholder='Enter username'
-                            />
-                            <Form.Text className='text-muted'></Form.Text>
-                        </Form.Group>
+                <Col>
+                    <Container className="container login-container border border-light shadow p-3 mb-5 rounded py-3 px-3">
+                        <h3 className="pb-2">Log in to myFlix</h3>
+                        <Form className="login-form">
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control type="text" placeholder="Enter username" required value={username} onChange={e => setUsername(e.target.value)} />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Enter password" required value={password} onChange={e => setPassword(e.target.value)} />
+                            </Form.Group>
+                            <Row className="justify-content-end">
+                                <Button className="login-button mr-3 ml-3" variant="primary" type="submit" block onClick={handleLogin}>Login</Button>
+                            </Row>
+                        </Form>
+                    </Container>
+                    <Container className="mt-4">
+                        <Row className="d-flex align-items-center justify-content-center">
+                            <span>Don't have an account?</span>
+                            <Link to={`/register`}>
+                                <Button variant="link" className="sign-up-link btn-lg" type="submit">Sign up</Button>
+                            </Link>
 
-                        <Form.Group controlId='formBasicPassword'>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type='password'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder='Enter Password'
-                            />
-                            <Form.Text className='text-muted'></Form.Text>
-                        </Form.Group>
-                        <Button
-                            variant="btn-lg btn-dark btn-block"
-                            type="submit" onClick={handleSubmit}>Login
-      </Button>
-                        <Form.Group controlId='formNewUser'>
-                            <Form.Text className='newUsers'>
-                                New user? click <span onClick={() => props.onClick()}>Here</span> to
-          sign up{' '}
-                            </Form.Text>
-                        </Form.Group>
-                    </Form.Group>
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
-        </div>
+        </div >
     );
 }
 
