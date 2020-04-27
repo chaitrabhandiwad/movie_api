@@ -6,10 +6,6 @@ body {
   font-family: $font-family;
 }
 
-.login-container {
-  margin-top: 100px;
-}
-
 .login-button, 
 #formBasicUsername, 
 #formBasicPassword {
@@ -41,3 +37,4 @@ body {
 .sign-up-link:hover {
   color: lighten( $primary-color, 20% );
 }
+

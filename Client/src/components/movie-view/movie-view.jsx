@@ -20,7 +20,7 @@ export class MovieView extends React.Component {
         const { movie } = this.props;
         e.preventDefault();
         axios.post(
-            `https://ancient-mullhouse.herokuapp.com/users/${localStorage.getItem('user')}/Movies/${movie._id}`,
+            `http://localhost:3000/users/${localStorage.getItem('user')}/Movies/${movie._id}`,
             { username: localStorage.getItem('user') },
             {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }

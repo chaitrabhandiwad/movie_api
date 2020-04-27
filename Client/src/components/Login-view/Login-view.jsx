@@ -5,16 +5,18 @@ import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import './login-view.scss';
+import Carousel from 'react-bootstrap/Carousel'
 
-const URL = 'https://ancient-mullhouse.herokuapp.com';
+const URL = 'http://localhost:3000';
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = e => {
+    const handleLogin = e => {
         e.preventDefault();
         const data = {
             Username: username,
@@ -34,8 +36,8 @@ export function LoginView(props) {
     // React-bootstrap components form
     return (
         <div className="login-view">
-            <Row className="justify-content-center">
-                <Col>
+            <Carousel classname="col-md-8">
+                <Carousel.Item>
                     <Container className="container login-container border border-light shadow p-3 mb-5 rounded py-3 px-3">
                         <h3 className="pb-2">Log in to myFlix</h3>
                         <Form className="login-form">
@@ -61,8 +63,22 @@ export function LoginView(props) {
 
                         </Row>
                     </Container>
-                </Col>
-            </Row>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/859126/5b431ce5733d1553d3b7bf0efc11412e-1000.jpg"
+                        alt="Second slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://www.wallpapers13.com/wp-content/uploads/2017/03/Avengers-Tony-Stark-Iron-Man-Movie-HD-Wallpaper-2880x1800-915x515.jpg"
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
         </div >
     );
 }
